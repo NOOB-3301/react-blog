@@ -1,6 +1,7 @@
-import { app } from "./app.js";
-import { connectDB } from "./db.js";
-
+// import { app } from "../app.js";
+import { app } from "../app.js";
+// import { connectDB } from "../db.js";
+import { connectDB } from "../db.js";
 const port = 3000
 
 try {
@@ -12,3 +13,5 @@ try {
 } catch (error) {
   console.error("cannot connect to db, check app.js trycach block")
 }
+
+
