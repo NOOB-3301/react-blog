@@ -13,5 +13,3 @@ try {
 } catch (error) {
   console.error("cannot connect to db, check app.js trycach block")
 }
-
-
