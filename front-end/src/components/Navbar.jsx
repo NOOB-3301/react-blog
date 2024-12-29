@@ -46,7 +46,7 @@ const Navbar = ({ theme, toggleTheme }) => {
 const register = async (event) => {
   event.preventDefault();
   try {
-    const response = await axios.post('https://react-blog-l3u1.vercel.app/api/auth/register', { username, email, password });
+    const response = await axios.post('https://react-blog-kwxf.vercel.app//api/auth/register', { username, email, password });
     const token = response.data.token;
     localStorage.setItem('token', `Bearer ${token}`);
     setIsLoggedIn(true);
