@@ -31,7 +31,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   const login = async (event) => {
   event.preventDefault();
   try {
-    const response = await axios.post('https://react-blog-inky-seven.vercel.app/api/login', { username, password });
+    const response = await axios.post("https://react-blog-kwxf.vercel.app/api/auth/login", { username, password });
     const token = response.data.token;
     console.log(token)
     localStorage.setItem('token', `Bearer ${token}`);
@@ -46,7 +46,7 @@ const Navbar = ({ theme, toggleTheme }) => {
 const register = async (event) => {
   event.preventDefault();
   try {
-    const response = await axios.post('https://react-blog-kwxf.vercel.app//api/auth/register', { username, email, password });
+    const response = await axios.post('https://react-blog-kwxf.vercel.app/api/auth/register', { username, email, password });
     const token = response.data.token;
     localStorage.setItem('token', `Bearer ${token}`);
     setIsLoggedIn(true);
@@ -73,10 +73,10 @@ const register = async (event) => {
     const token = localStorage.getItem('token');
     if (token) {
       axios
-        .get('http://localhost:8080/api/profile')
+        .get('https://react-blog-kwxf.vercel.app/api/auth/profile')
         .then((response) => {
           axios
-            .get('https://react-blog-onlk.onrender.com/api/profile')
+            .get('https://react-blog-kwxf.vercel.app/api/auth/profile')
             .then((response) => {
               setUser(response.data.username);
               setIsLoggedIn(true);

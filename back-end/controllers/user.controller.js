@@ -44,8 +44,8 @@ const getProfile = async (req,res) => {
       return res.status(401).json({ error: 'No token provided' });
     }
   
-    // const token = authHeader.split(' ')[1]; // Extract the token from "Bearer <token>"
-    const token = authHeader //do not need to splid as the token is only one and we need to use that token only
+    const token = authHeader.split(' ')[1]; // Extract the token from "Bearer <token>"
+    // const token = authHeader //do not need to splid as the token is only one and we need to use that token only
     try {
       const decoded = jwt.verify(token, "this is secret key");
       const user = await User.findById(decoded.userId);
