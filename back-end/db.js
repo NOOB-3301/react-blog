@@ -4,10 +4,6 @@ import mongoose from 'mongoose';
 dotenv.config({path:"./.env"})
 
 
-
-
-
-
 const connectDB= async () => {
     try {
         const resp =mongoose.connect("mongodb+srv://arkabasak62:1234@cluster0.i3bju.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
