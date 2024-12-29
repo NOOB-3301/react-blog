@@ -12,7 +12,7 @@ try {
     const hashedPassword = await bcrypt.hash(password, 10);
     const user =new User({ username, email, password: hashedPassword });
     await user.save();
-    const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user._id }, "this is secret key", { expiresIn: '1h' });
     res.json({ token });
     // return res.status(200).send({success:"user created successfully"}) 
 } catch (error) {
@@ -31,7 +31,7 @@ const loginUser = async (req,res) => {
     if (!isValidPassword) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-    const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user._id }, "this is secret key", { expiresIn: '1h' });
     res.json({ token });
 }
 
@@ -47,7 +47,7 @@ const getProfile = async (req,res) => {
     // const token = authHeader.split(' ')[1]; // Extract the token from "Bearer <token>"
     const token = authHeader //do not need to splid as the token is only one and we need to use that token only
     try {
-      const decoded = jwt.verify(token, process.env.SECRET_KEY);
+      const decoded = jwt.verify(token, "this is secret key");
       const user = await User.findById(decoded.userId);
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
