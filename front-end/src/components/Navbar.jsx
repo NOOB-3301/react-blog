@@ -73,10 +73,10 @@ const register = async (event) => {
     const token = localStorage.getItem('token');
     if (token) {
       axios
-        .get('https://react-blog-kwxf.vercel.app/api/auth/profile')
+        .get('https://react-blog-kwxf.vercel.app/api/auth/getProfile')
         .then((response) => {
           axios
-            .get('https://react-blog-kwxf.vercel.app/api/auth/profile')
+            .get('https://react-blog-kwxf.vercel.app/api/auth/getProfile')
             .then((response) => {
               setUser(response.data.username);
               setIsLoggedIn(true);
