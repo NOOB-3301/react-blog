@@ -302,7 +302,8 @@ const Navbar = ({ theme, toggleTheme }) => {
 
 
               <div className="flex items-center space-x-4">
-                {isLoggedIn ? (
+                {console.log(localStorage.getItem("token"))}
+                {localStorage.getItem("token") ? (
                   <div className="flex items-center space-x-3">
                     <button
                       onClick={handleProfileClick}
@@ -327,7 +328,8 @@ const Navbar = ({ theme, toggleTheme }) => {
                   </div>
                 ) : (
                   <button
-                    onClick={handleOpen}
+                    // onClick={handleOpen}
+                    onClick={()=>window.location.href="/login"}
                     className={`px-6 py-2 rounded-full text-sm font-medium
                     transform hover:scale-105 transition-all duration-300
                     shadow-lg hover:shadow-xl ${theme === 'light'
