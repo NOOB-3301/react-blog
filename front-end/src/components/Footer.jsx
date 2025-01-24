@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <>
-     <footer className="p-8 mt-8 w-full bg-gradient-to-r from-white to-white dark:from-[#171d30] dark:to-[#001f3d] text-black dark:text-white bg-emerald-500 shadow-lg shadow-emerald-500/50">
+     <footer className="p-8 w-full bg-gradient-to-r from-white to-white dark:from-[#171d30] dark:to-[#001f3d] text-black dark:text-white bg-emerald-500 shadow-lg shadow-emerald-500/50">
         <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
        
 

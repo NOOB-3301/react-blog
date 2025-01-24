@@ -5,6 +5,7 @@ import { sendMail } from './mailsender.js';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config({ path: '../.env' });
+import { generateEmailVerificationEmail, generateForgotPasswordEmail, generateDeleteAccountEmail } from './EmailTemplates.js';
 const secretKey = process.env.SECRET_KEY;
 
 export const genrateOtp = async (req, res) => {
@@ -43,8 +44,8 @@ export const genrateOtp = async (req, res) => {
 
         await sendMail(
             email,
-            "Dear Registered User, This is the OTP for your registration for React Blog App",
-            finalOTP.otp
+            "Welcome to React Blog App - Email Verification",
+            generateEmailVerificationEmail(otp)
         );
 
         return res.status(200).json({
@@ -98,8 +99,8 @@ export const generateOTPForDelete = async (req, res) => {
 
         await sendMail(
             email,
-            "OTP FOR DELETE ACCOUNT",
-            finalOTP.otp
+            "Account Deletion Request - React Blog App",
+            generateDeleteAccountEmail(finalOTP.otp)
         );
 
         return res.status(200).json({
@@ -153,8 +154,8 @@ export const generateOTPForPassword = async (req, res) => {
 
         await sendMail(
             email,
-            "Password Reset OTP for React Blog App",
-            `Your OTP for password reset is: ${finalOTP.otp}`
+            "Password Reset Request - React Blog App",
+            generateForgotPasswordEmail(finalOTP.otp)
         );
 
         return res.status(200).json({

@@ -275,11 +275,8 @@ const Navbar = ({ theme, toggleTheme }) => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <Link to="/" className="flex items-center space-x-2 group">
-              <span className={`text-2xl font-bold ${theme === 'light'
-                ? 'bg-gradient-to-r from-blue-600 to-indigo-600'
-                : 'bg-gradient-to-r from-blue-400 to-indigo-400'
-                } bg-clip-text text-transparent transform transition-transform duration-300 group-hover:scale-105`}>
-                React Blog
+              <span>
+                <img src="src/assets/logo.png" alt="img" className="w-20 rounded-full"/>
               </span>
             </Link>
 
