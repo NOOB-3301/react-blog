@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import menuIcon from "../assets/menu.svg";
 import closeIcon from "../assets/close.svg";
+import logo from "../assets/logo.png";
 import { link } from "./Baselink";
 import { BsMoon, BsSun } from "react-icons/bs";  // You can import icons from react-icons
 import { HiHome, HiInformationCircle, HiNewspaper, HiUser, HiMenu, HiX } from 'react-icons/hi';
@@ -276,7 +277,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           <div className="flex justify-between items-center h-20">
             <Link to="/" className="flex items-center space-x-2 group">
               <span>
-                <img src="src/assets/logo.png" alt="img" className="w-20 rounded-full"/>
+                <img src={logo} alt="img" className="w-20 p-3 rounded-full"/>
               </span>
             </Link>
 
